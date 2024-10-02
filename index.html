@@ -10290,6 +10290,10 @@
 },
 "depleted_uranium": {
     color: ["#25c591"],
+    behavior: [
+        "XX|CR:radiation%1|XX",
+        "CR:radiation%",
+        "M2|M1|M2",
     reactions: {
         "neutron": { elem1:"explosion", tempMin:2000, chance:0.01 }
     },
@@ -10302,7 +10306,6 @@
     excludeRandom: true
 },
 "molten_depleted_uranium": {
-    behavior: behaviors.RADMOLTEN,
     reactions: {
         "neutron": { elem1:"n_explosion", tempMin:500 },
         "glass": { elem1:null, elem2:"rad_glass" },
