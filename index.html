@@ -677,9 +677,9 @@
         airDensity = settings.airdensity || 1.225; // kg/m^3
         airTemp = settings.airtemp || 20; // Celsius
         absoluteZero = settings.abszero || -273.15; // Celsius
-        maxPixelCount = settings.maxpixels || 13365;
+        maxPixelCount = settings.maxpixels || 32767;
         function refreshMaxPixels() {
-            maxPixelCount = settings.maxpixels || 13365;
+            maxPixelCount = settings.maxpixels || 32767;
             if (settings.limitless) { settings.maxpixels = 0; }
             else { delete settings.maxpixels; }
             if (settings.maxpixels === 0) { maxPixelCount = 999999999999; }
