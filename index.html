@@ -17356,10 +17356,12 @@ window.onload = function() {
                     </span><br>
                     <span setting="pixelsize" class="setting-span multisetting" title="Default: Medium">
                         Canvas Size <select onchange="setSetting('pixelsize',this.value);this.nextElementSibling.innerText='Reset Scene'">
+                            <option value="10">Extra Small</option>
                             <option value="8">Small</option>
                             <option value="6" selected>Medium</option>
                             <option value="6w">Wide</option>
                             <option value="4">Large</option>
+                            <option value="3">Extra Large</option>
                         </select>
                         <span onclick="autoResizeCanvas(true);" style="font-style:italic;cursor:pointer"></span>
                     </span><br>
