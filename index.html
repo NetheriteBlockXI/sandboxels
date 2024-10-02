@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Sandboxels Source Mod</title>
+    <title>Sandboxels - Experiment with Pixels</title>
     <meta name="description" content="Relax or experiment with over 500 materials in this falling sand simulator, featuring heat, chemical reactions, density, burning, explosions.">
     <meta name="keywords" content="falling sand, elements, pixel art, simulator, powder, toy, chemistry, science, educational">
     <meta name="author" content="R74n">
@@ -956,6 +956,17 @@
     category: "land",
     state: "solid",
     density: 1602
+},
+"aerogel": {
+    color: ["#7cb9e8"],
+    behavior: behaviors.SUPPORT,
+    tempHigh: 1200,
+    stateHigh: "oxygen",
+    category: "powders",
+    state: "solid",
+    density: 0.12,
+    conduct: 0,
+    hardness: 0.05
 },
 "water": {
     color: "#2167ff",
@@ -10287,6 +10298,7 @@
     conduct: 0.235,
     superconductAt: -271.95,
     excludeRandom: true
+},
 "molten_uranium": {
     behavior: behaviors.RADMOLTEN,
     reactions: {
@@ -10331,17 +10343,6 @@
     density: 5250,
     conduct: 0.37,
     hardness: 0.3
-},
-"aerogel": {
-    color: ["#7cb9e8"],
-    behavior: behaviors.SUPPORT,
-    tempHigh: 1200,
-    stateHigh: "oxygen",
-    category: "powders",
-    state: "solid",
-    density: 0.12,
-    conduct: 0,
-    hardness: 0.05
 },
 "oxidized_copper": {
     color: ["#406555","#42564a","#517364"],
@@ -11376,35 +11377,6 @@
     viscosity: 2,
     state: "liquid",
     density: 498.5,
-    excludeRandom: true
-},
-"infinite_fire": {
-    color: ["#4a3923","#594933","#78654a"],
-    behavior: behaviors.LIQUID,
-    reactions: {
-        "water": { func: function(pixel){if (!pixel.burning) { pixel.burning=true; pixel.burnStart=pixelTick }}},
-        "salt_water": { func: function(pixel){if (!pixel.burning) { pixel.burning=true; pixel.burnStart=pixelTick }}},
-        "sugar_water": { func: function(pixel){if (!pixel.burning) { pixel.burning=true; pixel.burnStart=pixelTick }}},
-        "dirty_water": { func: function(pixel){if (!pixel.burning) { pixel.burning=true; pixel.burnStart=pixelTick }}},
-        "pool_water": { func: function(pixel){if (!pixel.burning) { pixel.burning=true; pixel.burnStart=pixelTick }}},
-        "seltzer": { func: function(pixel){if (!pixel.burning) { pixel.burning=true; pixel.burnStart=pixelTick }}},
-        "sand": { elem1:null, chance:0.05 },
-        "wet_sand": { elem1:null, chance:0.05 },
-        "vinegar": { elem1:null, chance:0.05 },
-        "fire": { elem1:"plasma" },
-    },
-    properties: { burning:false },
-    category: "weapons",
-    tempHigh: 12000,
-    stateHigh: "magma",
-    burn: 100,
-    burnTime: 20000,
-    burnInto: "fire",
-    burning: true,
-    insulate: true,
-    viscosity: 200,
-    state: "liquid",
-    density: 20,
     excludeRandom: true
 },
 "fireball": {
@@ -17384,10 +17356,6 @@ window.onload = function() {
                     </span><br>
                     <span setting="pixelsize" class="setting-span multisetting" title="Default: Medium">
                         Canvas Size <select onchange="setSetting('pixelsize',this.value);this.nextElementSibling.innerText='Reset Scene'">
-			    <option value="24">Electron (760 Pixels)</option>
-			    <option value="20">Neutron (1104 Pixels)</option>
-			    <option value="16">Atom (1769 Pixels)</option>
-			    <option value="12">Small+ (3159 Pixels)</option>
                             <option value="8">Small</option>
                             <option value="6" selected>Medium</option>
                             <option value="6w">Wide</option>
@@ -17538,7 +17506,7 @@ Cancer, Landmine, Grenade, Smoke Grenade">?</span>
     </div>
 
     <div id="bottomLeftBox">
-        <h2>Sandboxels + Source Mod Introduction</h2>
+        <h2>Sandboxels Introduction</h2>
         <p><strong><def>Sandboxels</def></strong> is a free falling-sand simulator that can be played in your browser. It features heat simulation, electricity, density, chemical reactions, cooking, and fire spread. With over 500 unique elements to play with, Sandboxels is a great way to pass the time and relax.</p>
         <p>There are thousands of interactions between the many materials, plants, animals, fluids, and powders in the game.</p>
         <p>Falling-sand games are a genre of sandbox games characterized by falling particles of various types.</p>
