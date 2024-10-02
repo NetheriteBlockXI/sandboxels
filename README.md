@@ -1,9 +1,11 @@
 # Sandboxels
 A falling sand simulation game.
 
-Play at [Sandboxels.R74n.com](https://sandboxels.r74n.com/).
+Play this version at [pro plus version yee](https://netheriteblockxi.github.io/sandboxels/)
 
-Join the [Discord server](https://discord.com/invite/ejUc6YPQuS).
+Play original at [Sandboxels.R74n.com](https://sandboxels.r74n.com/).
+
+Join the Sandboxels Discord[Discord server](https://discord.com/invite/ejUc6YPQuS).
 
 ![Landscape made in Sandboxels](https://raw.githubusercontent.com/R74nCom/sandboxels/main/icons/wallpaper.png)
  
