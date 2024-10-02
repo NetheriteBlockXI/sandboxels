@@ -10288,6 +10288,24 @@
     superconductAt: -271.95,
     excludeRandom: true
 },
+"depleted_uranium": {
+    color: ["#25c591"],
+    behavior: [
+        "XX|CR:radiation%1|XX",
+        "CR:radiation%1|CH:lead%0.001|CR:radiation%1",
+        "M2|M1|M2",
+    ],
+    reactions: {
+        "neutron": { elem1:"explosion", tempMin:2000, chance:0.01 }
+    },
+    tempHigh: 1100,
+    category: "powders",
+    state: "solid",
+    density: 12000,
+    hardness: 0.6,
+    conduct: 0.15,
+    excludeRandom: true
+},
 "molten_uranium": {
     behavior: behaviors.RADMOLTEN,
     reactions: {
@@ -11377,6 +11395,35 @@
     viscosity: 2,
     state: "liquid",
     density: 498.5,
+    excludeRandom: true
+},
+"infinite_fire": {
+    color: ["#4a3923","#594933","#78654a"],
+    behavior: behaviors.LIQUID,
+    reactions: {
+        "water": { func: function(pixel){if (!pixel.burning) { pixel.burning=true; pixel.burnStart=pixelTick }}},
+        "salt_water": { func: function(pixel){if (!pixel.burning) { pixel.burning=true; pixel.burnStart=pixelTick }}},
+        "sugar_water": { func: function(pixel){if (!pixel.burning) { pixel.burning=true; pixel.burnStart=pixelTick }}},
+        "dirty_water": { func: function(pixel){if (!pixel.burning) { pixel.burning=true; pixel.burnStart=pixelTick }}},
+        "pool_water": { func: function(pixel){if (!pixel.burning) { pixel.burning=true; pixel.burnStart=pixelTick }}},
+        "seltzer": { func: function(pixel){if (!pixel.burning) { pixel.burning=true; pixel.burnStart=pixelTick }}},
+        "sand": { elem1:null, chance:0.05 },
+        "wet_sand": { elem1:null, chance:0.05 },
+        "vinegar": { elem1:null, chance:0.05 },
+        "fire": { elem1:"plasma" },
+    },
+    properties: { burning:false },
+    category: "weapons",
+    tempHigh: 12000,
+    stateHigh: "magma",
+    burn: 100,
+    burnTime: 20000,
+    burnInto: "fire",
+    burning: true,
+    insulate: true,
+    viscosity: 200,
+    state: "liquid",
+    density: 20,
     excludeRandom: true
 },
 "fireball": {
